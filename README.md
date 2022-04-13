@@ -14,7 +14,7 @@ Sudoku Solver was coded and run in Java (v. 2021-12, 4.22.0).
 # Instructions
 
 1. Either (a) clone or (b) download and extract the repository to the root folder of an empty Java project.
-2. Select/create a file that contains the sudoku you wish to solve (see the example .txt files for the required format). You must copy the name of this file (incl. extension) and use it as the argument of the SudokuFrame object's a_file_sudoku parameter (in MainSudokuSolver.java).
+2. Select/create a file that contains the sudoku you wish to solve (see the example .txt files (located in the sudokus/ directory) for the required format). You must copy the name of this file (incl. extension) and use it as the argument of the SudokuFrame object's a_file_sudoku parameter (in MainSudokuSolver.java); however, note that it's advisable to use the relative path.
 3. Compile and run.
 
 

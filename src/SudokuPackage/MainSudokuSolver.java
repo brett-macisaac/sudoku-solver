@@ -87,9 +87,9 @@ public class MainSudokuSolver
     /* Auxiliary of main
      * main uses this method to create the frame.
     */
-    private static void CreateAndShowGUI() 
+    private static void CreateAndShowGUI()
     {
-        (new SudokuFrame("Sudoku Solver", "sudoku_33_1.txt", 3, 3, 50)).setVisible(true);
+        (new SudokuFrame("Sudoku Solver", "sudokus/sudoku_33_1.txt", 3, 3, 50)).setVisible(true);
     }
     
     
