@@ -1,0 +1,14 @@
+2 2
+
+0 0  4 3
+0 0  0 0
+
+0 0  0 0
+2 3  0 0
+
+
+Format:
+
+[width of a box] [height of a box]
+
+[The sudoku puzzle, row-by-row]
