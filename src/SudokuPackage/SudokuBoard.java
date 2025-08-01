@@ -937,7 +937,7 @@ public class SudokuBoard
         
         for (int row = 0; row < f_size_grid; ++row)
         {
-            row = (row + indexRowStart) % f_size_grid;
+            int rowOffset = (row + indexRowStart) % f_size_grid;
             
             // Right-to-left
 //            for (int col = f_size_grid - 1; col >= 0; --col)
@@ -955,9 +955,9 @@ public class SudokuBoard
             for (int col = 0; col < f_size_grid; ++col)
             {
                 
-                if (f_grid[row][col].GetValue() == S_VALUE_EMPTY_CELL)
+                if (f_grid[rowOffset][col].GetValue() == S_VALUE_EMPTY_CELL)
                 {
-                    a_coord.Set(row, col);
+                    a_coord.Set(rowOffset, col);
 
                     return true;
                 }
