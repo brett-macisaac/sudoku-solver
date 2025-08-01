@@ -475,11 +475,10 @@ public class SudokuBoard
     }
     
     /*
-     * This method places the value a_value at the cell located at the given coordinate.
+     * Loads the grid with a sudoku located in the given file.
      
      * Parameters:
-         > a_value: the value to place.
-         > a_coord: the coordinate at a_value is to be placed.
+         > a_file_sudoku: the value to place.
     */
     public void SetFromFile(String a_file_sudoku)
     {
@@ -909,9 +908,9 @@ public class SudokuBoard
         int l_index_col_max = l_index_col_min + (f_width_box - 1);
 
         // Check if the value is equal to any within its box.
-        for (int row = l_index_row_min; row < l_index_row_max; ++row)
+        for (int row = l_index_row_min; row <= l_index_row_max; ++row)
         {
-            for (int col = l_index_col_min; col < l_index_col_max; ++col)
+            for (int col = l_index_col_min; col <= l_index_col_max; ++col)
             {
                 if (row == l_row && col == l_col)
                 { continue; }
@@ -932,19 +931,37 @@ public class SudokuBoard
     */
     private boolean AssignNextEmptyCell(SudokuCoordinate a_coord)
     {
+        // The row to start at (only for testing purposes; should be a parameter eventually, along with other options like
+        // up-down and left-right directions).
+        int indexRowStart = 0;
+        
         for (int row = 0; row < f_size_grid; ++row)
         {
+            row = (row + indexRowStart) % f_size_grid;
+            
+            // Right-to-left
+//            for (int col = f_size_grid - 1; col >= 0; --col)
+//            {
+//                
+//                if (f_grid[rowOffset][col].GetValue() == S_VALUE_EMPTY_CELL)
+//                {
+//                    a_coord.Set(rowOffset, col);
+//
+//                    return true;
+//                }
+//            }
+            
+            // Left-to-right
             for (int col = 0; col < f_size_grid; ++col)
             {
+                
                 if (f_grid[row][col].GetValue() == S_VALUE_EMPTY_CELL)
                 {
                     a_coord.Set(row, col);
 
                     return true;
                 }
-
             }
-
         }
 
         return false;

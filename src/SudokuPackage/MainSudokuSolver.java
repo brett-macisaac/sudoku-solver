@@ -70,14 +70,14 @@ public class MainSudokuSolver
         
         // This code schedules a job on the event-dispatching thread, which creates and shows the application's GUI.
         javax.swing.SwingUtilities.invokeLater(
-                new Runnable() 
+            new Runnable() 
+            {
+                public void run() 
                 {
-                    public void run() 
-                    {
-                        CreateAndShowGUI();
-                    }
-                    
-                });
+                    CreateAndShowGUI();
+                }
+            }
+        );
         
     }
     
